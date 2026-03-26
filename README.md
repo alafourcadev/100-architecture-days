@@ -36,7 +36,7 @@ Un reto de 110 días donde resuelvo un problema real de arquitectura por día. C
 
 | Día | Tema | Artículo |
 |-----|------|----------|
-| | | *Próximamente...* |
+| 001 | Cold Start — Application Startup Optimization | [Leer artículo](https://alafourca.dev/blog/cold-start-spring-boot) |
 
 ---
 

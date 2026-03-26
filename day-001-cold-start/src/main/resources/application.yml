@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: day-001-cold-start
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+server:
+  port: 8080
