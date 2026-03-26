@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: day002-postgres
+    environment:
+      POSTGRES_DB: day002
+      POSTGRES_USER: day002
+      POSTGRES_PASSWORD: day002
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
