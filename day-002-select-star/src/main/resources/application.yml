@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: day-002-select-star
+  datasource:
+    url: jdbc:postgresql://localhost:5435/day002
+    username: day002
+    password: day002
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    defer-datasource-initialization: true
+
+server:
+  port: 8080

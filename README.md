@@ -37,6 +37,7 @@ Un reto de 110 días donde resuelvo un problema real de arquitectura por día. C
 | Día | Tema | Artículo |
 |-----|------|----------|
 | 001 | Cold Start — Application Startup Optimization | [Leer artículo](https://alafourca.dev/blog/cold-start-spring-boot) |
+| 002 | SELECT * — DTO Projection Pattern | [Leer artículo](https://alafourca.dev/blog/select-star-spring) |
 
 ---
 
