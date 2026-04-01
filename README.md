@@ -40,6 +40,7 @@ Un reto de 110 días donde resuelvo un problema real de arquitectura por día. C
 | 002 | SELECT * — DTO Projection Pattern | [Leer artículo](https://alafourca.dev/blog/select-star-spring) |
 | 003 | Query Analysis — EXPLAIN ANALYZE | [Leer artículo](https://alafourca.dev/blog/query-analysis-spring) |
 | 004 | Pagination — Offset vs Cursor | [Leer artículo](https://alafourca.dev/blog/paginacion-spring) |
+| 005 | N+1 Queries — JOIN FETCH & EntityGraph | [Leer artículo](https://alafourca.dev/blog/n-plus-one-queries-spring) |
 
 ---
 
