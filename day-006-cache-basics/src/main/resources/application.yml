@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: day-006-cache-basics
+  datasource:
+    url: jdbc:h2:mem:day006
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+  cache:
+    type: simple
+
+logging:
+  level:
+    org.springframework.cache: TRACE
+
+server:
+  port: 8080

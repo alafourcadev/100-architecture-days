@@ -41,6 +41,7 @@ Un reto de 110 días donde resuelvo un problema real de arquitectura por día. C
 | 003 | Query Analysis — EXPLAIN ANALYZE | [Leer artículo](https://alafourca.dev/blog/query-analysis-spring) |
 | 004 | Pagination — Offset vs Cursor | [Leer artículo](https://alafourca.dev/blog/paginacion-spring) |
 | 005 | N+1 Queries — JOIN FETCH & EntityGraph | [Leer artículo](https://alafourca.dev/blog/n-plus-one-queries-spring) |
+| 006 | Cache Basics — Caching Strategy & Invalidation | [Leer artículo](https://alafourca.dev/blog/cache-spring-boot) |
 
 ---
 
