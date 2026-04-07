@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: day-007-profiling-bottleneck
+  datasource:
+    url: jdbc:h2:mem:day007
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+  h2:
+    console:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus
+  metrics:
+    tags:
+      application: day-007-profiling
+
+server:
+  port: 8080
