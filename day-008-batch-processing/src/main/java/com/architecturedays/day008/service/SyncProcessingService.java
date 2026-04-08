@@ -4,20 +4,22 @@ import com.architecturedays.day008.model.Registro;
 import com.architecturedays.day008.repository.RegistroRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 /**
- * BEFORE: Todo sincrono, todo en memoria, todo en un solo thread.
+ * BEFORE: Lee todo el CSV en memoria, procesa uno por uno,
+ * guarda uno por uno, bloquea el thread HTTP hasta terminar.
  *
- * Carga TODOS los registros en memoria, los procesa uno por uno,
- * guarda uno por uno, y bloquea el thread HTTP hasta terminar.
- *
- * Con 50.000 registros: ~15 segundos bloqueando.
- * Con 500.000: timeout del load balancer. OOM si hay poca memoria.
+ * Con 5.000 registros: ~5-8 segundos bloqueando.
+ * Con 500.000: timeout del load balancer. OOM probable.
  */
 @Service
 @Profile("before")
@@ -30,40 +32,59 @@ public class SyncProcessingService implements ProcessingService {
     }
 
     @Override
-    public Map<String, Object> procesarTodos() {
+    public Map<String, Object> procesar(MultipartFile archivo) {
         long inicio = System.currentTimeMillis();
-        System.out.println("BEFORE: Cargando TODOS los registros en memoria...");
+        System.out.println("BEFORE: Leyendo TODO el CSV en memoria...");
 
-        // Carga todo en memoria de golpe
-        List<Registro> registros = repository.findByProcesado(false);
-        System.out.println("BEFORE: " + registros.size() + " registros en memoria");
-
-        int procesados = 0;
+        List<Registro> registros = new ArrayList<>();
         int errores = 0;
 
-        // Procesa uno por uno, guarda uno por uno
-        for (Registro r : registros) {
-            try {
-                // Simula procesamiento (validacion, transformacion, calculo)
-                Thread.sleep(1); // 1ms por registro — parece poco, con 50K son 50 segundos
-                r.setMonto(r.getMonto().multiply(BigDecimal.valueOf(1.21)).setScale(2, RoundingMode.HALF_UP));
-                r.setProcesado(true);
-                repository.save(r); // Un INSERT/UPDATE por registro
-                procesados++;
-            } catch (Exception e) {
-                errores++;
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(archivo.getInputStream()))) {
+
+            String linea = reader.readLine(); // Saltar header
+
+            while ((linea = reader.readLine()) != null) {
+                String[] campos = linea.split(",");
+                try {
+                    String codigo = campos[0].trim();
+                    String descripcion = campos[1].trim();
+                    BigDecimal monto = new BigDecimal(campos[2].trim());
+
+                    // Simula validacion y transformacion pesada
+                    Thread.sleep(1);
+
+                    monto = monto.multiply(BigDecimal.valueOf(1.21))
+                            .setScale(2, RoundingMode.HALF_UP);
+
+                    registros.add(new Registro(codigo, descripcion, monto));
+                } catch (Exception e) {
+                    errores++;
+                }
             }
+        } catch (Exception e) {
+            return Map.of("error", "Fallo al leer el archivo: " + e.getMessage());
+        }
+
+        System.out.println("BEFORE: " + registros.size() + " registros en memoria. Guardando uno por uno...");
+
+        // Guarda UNO POR UNO — el horror
+        int guardados = 0;
+        for (Registro r : registros) {
+            r.setProcesado(true);
+            repository.save(r);
+            guardados++;
         }
 
         long duracion = System.currentTimeMillis() - inicio;
-        System.out.println("BEFORE: Terminado en " + duracion + "ms — el usuario espero todo este tiempo");
+        System.out.println("BEFORE: Terminado en " + duracion + "ms");
 
         return Map.of(
-                "procesados", procesados,
+                "procesados", guardados,
                 "errores", errores,
                 "duracionMs", duracion,
-                "modo", "SINCRONO — el usuario espero " + duracion + "ms",
-                "problema", "Todo en memoria, todo secuencial, cero feedback"
+                "modo", "SINCRONO — el usuario espero " + (duracion / 1000) + " segundos",
+                "problema", "Todo en memoria, save uno por uno, cero feedback"
         );
     }
 
