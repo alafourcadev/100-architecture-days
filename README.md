@@ -43,6 +43,7 @@ Un reto de 110 días donde resuelvo un problema real de arquitectura por día. C
 | 005 | N+1 Queries — JOIN FETCH & EntityGraph | [Leer artículo](https://alafourca.dev/blog/n-plus-one-queries-spring) |
 | 006 | Cache Basics — Caching Strategy & Invalidation | [Leer artículo](https://alafourca.dev/blog/cache-spring-boot) |
 | 007 | Profiling Bottleneck — Actuator & Micrometer | [Leer artículo](https://alafourca.dev/blog/profiling-bottleneck-spring) |
+| 008 | Batch Processing — Async & Chunked Processing | [Leer artículo](https://alafourca.dev/blog/batch-processing-spring) |
 
 ---
 
