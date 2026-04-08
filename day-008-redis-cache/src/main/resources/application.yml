@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: day-008-redis-cache
+  datasource:
+    url: jdbc:h2:mem:day008
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  h2:
+    console:
+      enabled: true
+
+server:
+  port: 8080
