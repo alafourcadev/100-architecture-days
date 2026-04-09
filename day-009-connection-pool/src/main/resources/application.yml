@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: day-009-connection-pool
+  datasource:
+    url: jdbc:h2:mem:day009
+    driver-class-name: org.h2.Driver
+    hikari:
+      maximum-pool-size: 5            # Pool chico para ver el problema rapido
+      minimum-idle: 2
+      connection-timeout: 5000        # 5 segundos y ya falla
+      leak-detection-threshold: 10000 # Avisa a los 10s si hay leaks
+      pool-name: day009-pool
+  h2:
+    console:
+      enabled: true
+  sql:
+    init:
+      mode: always
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics
+
+server:
+  port: 8080
