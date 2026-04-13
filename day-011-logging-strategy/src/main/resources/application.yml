@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: day-011-logging-strategy
+
+logging:
+  level:
+    root: WARN
+    com.architecturedays.day011: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, loggers
+
+server:
+  port: 8080

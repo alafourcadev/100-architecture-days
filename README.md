@@ -46,6 +46,7 @@ Un reto de 110 días donde resuelvo un problema real de arquitectura por día. C
 | 008 | Batch Processing — Async & Chunked Processing | [Leer artículo](https://alafourca.dev/blog/batch-processing-spring) |
 | 009 | Connection Pool — HikariCP & Leak Prevention | [Leer artículo](https://alafourca.dev/blog/connection-pool-spring) |
 | 010 | Database Indexes — Index Selectivity & Write Amplification | [Leer artículo](https://alafourca.dev/blog/indices-database) |
+| 011 | Logging Strategy — Structured Logging & Observability | [Leer artículo](https://alafourca.dev/blog/logging-strategy) |
 
 ---
 
