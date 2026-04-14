@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: day-012-latency-api
+
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html
+    min-response-size: 1024
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics
