@@ -47,7 +47,7 @@ Un reto de 110 días donde resuelvo un problema real de arquitectura por día. C
 | 009 | Connection Pool — HikariCP & Leak Prevention | [Leer artículo](https://alafourca.dev/blog/connection-pool-spring) |
 | 010 | Database Indexes — Index Selectivity & Write Amplification | [Leer artículo](https://alafourca.dev/blog/indices-database) |
 | 011 | Logging Strategy — Structured Logging & Observability | [Leer artículo](https://alafourca.dev/blog/logging-strategy) |
-| 012 | Latency API — Parallel I/O & Latency Optimization | [Leer artículo](https://alafourca.dev/blog/latency-api) |
+| 012 | Rate Limiting — Token Bucket & Traffic Control | [Leer artículo](https://alafourca.dev/blog/rate-limiting) |
 
 ---
 

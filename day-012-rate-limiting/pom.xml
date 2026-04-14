@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>com.architecturedays</groupId>
-    <artifactId>day-012-latency-api</artifactId>
+    <artifactId>day-012-rate-limiting</artifactId>
     <version>1.0.0</version>
-    <name>Day 012 - Latency API</name>
-    <description>#100ArchitectureDays - Tu API responde pero 500ms despues</description>
+    <name>Day 012 - Rate Limiting</name>
+    <description>#100ArchitectureDays - 5000 personas le dieron click al mismo tiempo</description>
 
     <properties>
         <java.version>21</java.version>
@@ -25,10 +25,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

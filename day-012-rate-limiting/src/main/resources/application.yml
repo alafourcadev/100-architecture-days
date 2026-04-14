@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: day-012-rate-limiting
+
+server:
+  port: 8080
+  tomcat:
+    threads:
+      max: 20
