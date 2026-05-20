@@ -52,6 +52,7 @@ Un reto de 110 días donde resuelvo un problema real de arquitectura por día. C
 | 014 | Coupling & Cohesion — DTOs per Layer | [Leer artículo](https://alafourca.dev/blog/coupling-cohesion) |
 | 015 | Wrong Abstraction — DRY vs WET | [Leer artículo](https://alafourca.dev/blog/wrong-abstraction) |
 | 016 | Open/Closed — Extend Without Touching What Works | [Leer artículo](https://alafourca.dev/blog/open-closed) |
+| 017 | Liskov — El subtipo que explota en runtime | [Leer artículo](https://alafourca.dev/blog/liskov) |
 
 ---
 
