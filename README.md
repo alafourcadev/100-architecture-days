@@ -54,6 +54,9 @@ Un reto de 110 días donde resuelvo un problema real de arquitectura por día. C
 | 016 | Open/Closed — Extend Without Touching What Works | [Leer artículo](https://alafourca.dev/blog/open-closed) |
 | 017 | Liskov — El subtipo que explota en runtime | [Leer artículo](https://alafourca.dev/blog/liskov) |
 | 018 | Dependency Inversion — Cambiar de proveedor sin tocar el core | [Leer artículo](https://alafourca.dev/blog/dependency-inversion) |
+| 019 | Naming — el código se lee 10x más de lo que se escribe | [Leer artículo](https://alafourca.dev/blog/naming) |
+| 020 | YAGNI — la feature que programaste "por las dudas" | [Leer artículo](https://alafourca.dev/blog/yagni) |
+| 021 | Composition Over Inheritance — La jerarquía de 4 niveles imposible de tocar | [Leer artículo](https://alafourca.dev/blog/composicion-sobre-herencia) |
 
 ---
 
