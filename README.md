@@ -57,6 +57,7 @@ Un reto de 110 días donde resuelvo un problema real de arquitectura por día. C
 | 019 | Naming — el código se lee 10x más de lo que se escribe | [Leer artículo](https://alafourca.dev/blog/naming) |
 | 020 | YAGNI — la feature que programaste "por las dudas" | [Leer artículo](https://alafourca.dev/blog/yagni) |
 | 021 | Composition Over Inheritance — La jerarquía de 4 niveles imposible de tocar | [Leer artículo](https://alafourca.dev/blog/composicion-sobre-herencia) |
+| 022 | Boolean Parameters — La call-site que te obliga a abrir la definición para saber qué hace | [Leer artículo](https://alafourca.dev/blog/boolean-parameters) |
 
 ---
 
